@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4 text-center">
+			<h2>Sign-in form</h2><hr>
+			<form action="/session/create" method="POST">
+				<input type="text" name="username" placeholder="Username" class="form-control" /><br>
+				<input type="password" name="password" placeholder="password" class="form-control" /><br>
+				<input type="submit" class="btn btn-default" value="Log-In" />
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+			</form>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</div>

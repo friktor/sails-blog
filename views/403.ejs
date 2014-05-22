@@ -1,0 +1,18 @@
+<<!DOCTYPE html>
+<html>
+  <head>
+    <title>403</title>
+    <link rel="stylesheet" type="text/css" href="/styles/importer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <% if (typeof error !== 'undefined') { %>
+        <%= error %>
+        <% } else { %>
+        You don't have permission to see the page you're trying to reach.
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

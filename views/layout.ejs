@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BLOG</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <link rel="shortcut icon" href="/images/logo.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--  
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/linker/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+        
+        To customize any part of the built-in behavior, just edit your Gruntfile.
+        For example, here are a few things you could do:
+            
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+  </head>
+
+  <body>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BLOG</a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/post">LATEST POST</a></li>
+            </ul>
+            <div class="navbar-right">
+              <% if (req.session.auth && req.session.User.admin) { %>
+                <a href="/admin" class="btn btn-default navbar-btn"><%= req.session.User.username %></a>
+                <a href="/logout" class="btn btn-danger navbar-btn">Log-Out</a>
+              <% }; %>
+              <% if (!req.session.auth) { %>
+                <a href="/login" class="btn btn-default navbar-btn">Log-In</a>
+              <% }; %>
+            </div>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+
+    <%- body %>
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/linker/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+        
+        To customize this behavior to fit your needs, just edit your Gruntfile.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, filesin your `assets/linker/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+      
+      To customize any part of the built-in behavior, just edit your Gruntfile.
+      For example, here are a few things you could do:
+          
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

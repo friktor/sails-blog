@@ -1,0 +1,37 @@
+<div class="container text-center">
+	<h2>CREATE NEW</h2><br>
+	<div class="row">
+		<form action="/post/create" method="POST">
+			<div class="col-md-6">
+				<input class="form-control" type="text" name="title" placeholder="Title Post"><hr>
+				<textarea rows="3" class="form-control" name="description" placeholder="Description"></textarea>
+			</div>
+			<div class="col-md-6">
+				<textarea rows="7" class="form-control" name="content" placeholder="Content"></textarea>
+			</div>
+			<div class="col-md-12">
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+				<br><input type="submit" class="btn btn-success" value="CREATE" />
+			</div>
+		</form>
+	</div><br>
+	<h2>POST LIST</h2>
+	<table class="table text-left">
+		<tr>
+			<th>ID</th>
+			<th>TITLE</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<% _.each(posts, function (post) { %>
+			<tr>
+				<td><%= post.id %></td>
+				<td><%= post.title %></td>
+				<td><a href="/post/watch/<%= post.id %>" class="btn btn-info">Look</a></td>
+				<td><a href="/post/delete/<%= post.id %>" class="btn btn-danger">Delete</a></td>
+				<td><a href="/admin/edit/<%= post.id %>" class="btn btn-warning">Edit</a></td>
+			</tr>			
+		<% }) %>
+	</table>
+</div>

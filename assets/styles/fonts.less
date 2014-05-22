@@ -1,0 +1,18 @@
+@icon-font-path: '/fonts/glyphicons/';
+
+@font-face{
+	font-family: Open Sans;
+	src: url('/fonts/opensans/OpenSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+}
+@font-face {
+	font-family: Open Sans;
+	src: url('/fonts/opensans/OpenSans-Light.ttf') format('truetype');
+	font-weight: 300;
+}
+
+.OpenSans(@color, @weight) {
+	font-family: Open Sans;
+	font-weight: @weight;
+	color: @color;
+}

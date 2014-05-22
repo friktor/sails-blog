@@ -1,0 +1,18 @@
+<<!DOCTYPE html>
+<html>
+  <head>
+    <title>403</title>
+    <link rel="stylesheet" type="text/css" href="/styles/importer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <% if (typeof error !== 'undefined') { %>
+        <%= error %>
+        <% } else { %>
+          The page you were trying to reach doesn't exist.
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
