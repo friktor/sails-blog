@@ -17,6 +17,11 @@ var User = {
       type: 'boolean',
       defaultsTo: false
     },
+    toJSON: function() {
+    	var element = this.toObject();
+    	delete element.password;
+    	return element;
+    }
 
   },
 
